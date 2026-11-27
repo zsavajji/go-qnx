@@ -16,7 +16,7 @@ ENV GOLANG_VERSION 1.27.4
 # The release assets are downloaded from GitHub; CI builds a pull request's
 # image from its own freshly built tarballs by pointing this at a local server.
 # The checksums below are checked either way.
-ARG GO_DOWNLOAD_BASE=https://github.com/XIAZY/go-qnx/releases/download/go1.27.4
+ARG GO_DOWNLOAD_BASE=https://github.com/zsavajji/go-qnx/releases/download/go1.27.4
 
 RUN set -eux; \
 	now="$(date '+%s')"; \
