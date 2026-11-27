@@ -237,9 +237,10 @@ in [misc/docker/README.md](misc/docker/README.md).
 
 #### Changes since go1.27.1
 
-A build from `release-branch.go1.27` reports `go version go1.27.4`, the
-same string as Google's release, so keep its `GOCACHE` apart from any stock
-Go, as described above. A build from `master` has no VERSION file and reports
+A build from `release-branch.go1.27` reports `go version go1.27.4-1`:
+upstream's go1.27.4 plus the QNX port, in this repository's first build
+after its own go1.27.4. The go command reads a version up to the dash, so
+it is Go 1.27.4 to a go.mod file. A build from `master` has no VERSION file and reports
 a devel version named by its commit, `go1.27-devel_<commit>`. If you build
 the toolchain from `master` and copy the tree to another machine without
 `.git`, copy `VERSION.cache` too (make.bash writes it), or `go run cmd/dist`
