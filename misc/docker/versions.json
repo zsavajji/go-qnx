@@ -1,19 +1,19 @@
 {
   "1.27": {
-    "version": "1.27.4-1",
+    "version": "1.27.4-2",
     "source": {
       "repository": "https://github.com/zsavajji/go-qnx",
-      "tag": "go1.27.4-1",
-      "commit": "ea304a1143b2fddad0209a741926298da0b91b1c"
+      "tag": "go1.27.4-2",
+      "commit": "7b7b94de178785f8efe6877adce2dc85359a5537"
     },
     "src": {
-      "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-1/go1.27.4-1.src.tar.gz",
-      "sha256": "4c8efcd34ba60be30f887a204dfe0ec009b5f25081169cc4a7c14f64573bb2d8"
+      "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-2/go1.27.4-2.src.tar.gz",
+      "sha256": "d281e879469e5eb67bbbe593ad47e442748a3c853fa1a6089c5c6065f1ca34c5"
     },
     "arches": {
       "amd64": {
-        "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-1/go1.27.4-1.linux-amd64.tar.gz",
-        "sha256": "08a7f15eea2dab8c8b8fa26ac358e2a660d0853095952298f44ac29cf47614cf",
+        "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-2/go1.27.4-2.linux-amd64.tar.gz",
+        "sha256": "08c39961837e9a4dbec2fd9c3287130cddf1ec603b5134a73044d9ffcece6c69",
         "env": {
           "GOOS": "linux",
           "GOARCH": "amd64",
@@ -22,8 +22,8 @@
         "supported": true
       },
       "arm64v8": {
-        "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-1/go1.27.4-1.linux-arm64.tar.gz",
-        "sha256": "8fa363db4a4d386e8e8e585f3bbdeb817dbf8cc5f41574a6341a65d632d594cc",
+        "url": "https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-2/go1.27.4-2.linux-arm64.tar.gz",
+        "sha256": "8d70aa1bd86df1199c0874d8daa7ef24fe4885dbe99c9daf7aa204bb5856975c",
         "env": {
           "GOOS": "linux",
           "GOARCH": "arm64",

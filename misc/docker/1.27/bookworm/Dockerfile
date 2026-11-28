@@ -11,12 +11,12 @@ FROM buildpack-deps:bookworm-scm AS build
 
 ENV PATH /usr/local/go/bin:$PATH
 
-ENV GOLANG_VERSION 1.27.4-1
+ENV GOLANG_VERSION 1.27.4-2
 
 # The release assets are downloaded from GitHub; CI builds a pull request's
 # image from its own freshly built tarballs by pointing this at a local server.
 # The checksums below are checked either way.
-ARG GO_DOWNLOAD_BASE=https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-1
+ARG GO_DOWNLOAD_BASE=https://github.com/zsavajji/go-qnx/releases/download/go1.27.4-2
 
 RUN set -eux; \
 	now="$(date '+%s')"; \
@@ -24,12 +24,12 @@ RUN set -eux; \
 	url=; \
 	case "$arch" in \
 		'amd64') \
-			url="$GO_DOWNLOAD_BASE/go1.27.4-1.linux-amd64.tar.gz"; \
-			sha256='08a7f15eea2dab8c8b8fa26ac358e2a660d0853095952298f44ac29cf47614cf'; \
+			url="$GO_DOWNLOAD_BASE/go1.27.4-2.linux-amd64.tar.gz"; \
+			sha256='08c39961837e9a4dbec2fd9c3287130cddf1ec603b5134a73044d9ffcece6c69'; \
 			;; \
 		'arm64') \
-			url="$GO_DOWNLOAD_BASE/go1.27.4-1.linux-arm64.tar.gz"; \
-			sha256='8fa363db4a4d386e8e8e585f3bbdeb817dbf8cc5f41574a6341a65d632d594cc'; \
+			url="$GO_DOWNLOAD_BASE/go1.27.4-2.linux-arm64.tar.gz"; \
+			sha256='8d70aa1bd86df1199c0874d8daa7ef24fe4885dbe99c9daf7aa204bb5856975c'; \
 			;; \
 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; \
 	esac; \
@@ -58,7 +58,7 @@ RUN set -eux; \
 # smoke test: the toolchain must report this version and know both QNX
 # targets (dist lists them only with -broken; CI's hello cross-build is the real test)
 	go version; \
-	[ "$(go env GOVERSION)" = 'go1.27.4-1' ]; \
+	[ "$(go env GOVERSION)" = 'go1.27.4-2' ]; \
 	go tool dist list -broken | grep -qx 'qnx/386'; \
 	go tool dist list -broken | grep -qx 'qnx/arm'; \
 # make sure our reproducibile timestamp is probably still correct (best-effort inline reproducibility test)
@@ -87,7 +87,7 @@ RUN set -eux; \
 	fi; \
 	rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.27.4-1
+ENV GOLANG_VERSION 1.27.4-2
 
 # don't auto-upgrade the gotoolchain
 # https://github.com/docker-library/golang/issues/472
